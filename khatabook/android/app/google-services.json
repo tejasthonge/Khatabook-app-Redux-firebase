@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "708014670440",
+    "project_id": "khatabook-app-1660f",
+    "storage_bucket": "khatabook-app-1660f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708014670440:android:a409c53958f41eb994f1dd",
+        "android_client_info": {
+          "package_name": "com.example.khatabook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVoWj8zlMIXys8Je49H9NtKK43HZDV2Gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
