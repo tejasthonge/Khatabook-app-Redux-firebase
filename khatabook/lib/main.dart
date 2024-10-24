@@ -1,15 +1,11 @@
 
-
-import 'dart:ui';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:khatabook/common/themes/app_them.dart';
 import 'package:khatabook/redux/store.dart';
-import 'package:khatabook/view/ui/login/register.dart';
+import 'package:khatabook/view/ui/auth/register.dart';
 
 void main()async{ 
   

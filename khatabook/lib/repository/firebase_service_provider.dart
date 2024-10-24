@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:khatabook/models/session_model.dart';
 import 'package:khatabook/models/user_model.dart';
 
 class BossFirebase {
@@ -14,7 +15,7 @@ class BossFirebase {
   }
   BossFirebase._internal();
 
-  Future<String?> createEmailAccout(
+  Future<BossModel> createEmailAccout(
       {required String email,
       required String password,
       required String name}) async {
@@ -22,28 +23,29 @@ class BossFirebase {
     try {
       UserCredential user = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-
+      String? authToken;
       if (user.user != null) {
-        String authToken = user.user!.uid;
+        authToken = user.user!.uid;
 
         UserModel userData =
             UserModel(email: email, name: name, password: password);
-        status = await storeUserData(userData: userData, authToken: authToken);
+        status = await _storeUserData(userData: userData, authToken: authToken);
       }
 
-      return status;
+      return BossModel(lable: status, value: authToken);
     } on FirebaseAuthException catch (e) {
-      return e.code;
+      return BossModel(lable: e.message, value: "");
     }
   }
 
-  Future<String?> storeUserData(
+  Future<String?> _storeUserData(
       {required String authToken, required UserModel userData}) async {
     try {
       DocumentReference doc =
           await _firestore.collection("user").doc(authToken);
       doc.set(userData.toJson());
-      return "User Account Created successfully";
+
+      return "User created successfully";
     } on FirebaseException catch (e) {
       return e.code;
     }

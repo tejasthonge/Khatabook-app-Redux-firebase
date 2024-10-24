@@ -15,7 +15,7 @@ class SessionState{
   factory SessionState.initialState()=>SessionState( 
     authToken: '',
     user: null,
-    status: "No Update",
+    status: "",
   );
   SessionState copyWith({String? authToken, UserModel? user ,String? status }) => SessionState( 
     authToken: authToken?? this.authToken,

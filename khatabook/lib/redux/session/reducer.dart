@@ -6,7 +6,7 @@
 import 'package:khatabook/models/user_model.dart';
 import 'package:khatabook/redux/session/action.dart';
 import 'package:khatabook/redux/session/state.dart';
-import 'package:khatabook/view/ui/login/register.dart';
+import 'package:khatabook/view/ui/auth/register.dart';
 import 'package:redux/redux.dart';
 
 Reducer<SessionState> sesionReducer = combineReducers<SessionState>(

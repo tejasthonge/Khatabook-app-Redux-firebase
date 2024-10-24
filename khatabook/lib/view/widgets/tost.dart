@@ -4,9 +4,10 @@ class BossTost {
   static getTost({required BuildContext context, required String title ,required Color bgColor}) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         backgroundColor:bgColor, 
+        behavior: SnackBarBehavior.floating,
         content: Text(
       title,
-      style: TextStyle( 
+      style: const TextStyle( 
         fontWeight: FontWeight.w600,
         color:Colors.white
       ),
